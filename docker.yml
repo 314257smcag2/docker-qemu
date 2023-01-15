@@ -1,5 +1,5 @@
 services:
-  vpsmg1:
+  novnc:
     build: .
     shm_size: 3gb
     ports:
