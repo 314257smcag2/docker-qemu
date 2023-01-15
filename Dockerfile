@@ -1,4 +1,4 @@
-FROM ubuntu:20.04.5
+FROM ubuntu:20.04
 MAINTAINER Doro Wu <fcwu.tw@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
