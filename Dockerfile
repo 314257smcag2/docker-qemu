@@ -1,4 +1,4 @@
-FROM ubuntu:14.04.2
+FROM ubuntu:20.04.5
 MAINTAINER Doro Wu <fcwu.tw@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -21,7 +21,7 @@ ENV VM_RAM 2048
 ENV VM_DISK_IMAGE_SIZE 10G
 ENV VM_DISK_IMAGE /data/disk-image
 ENV VM_DISK_IMAGE_CREATE_IF_NOT_EXIST 1
-ENV ISO http://releases.ubuntu.com/14.04.2/ubuntu-14.04.2-desktop-amd64.iso
+ENV ISO http://releases.ubuntu.com/20.04.5/ubuntu-20.04.5-desktop-amd64.iso
 ENV ISO_FORCE_DOWNLOAD 0
 ENV NETWORK bridge
 ENV REMOTE_ACCESS vnc
