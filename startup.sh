@@ -28,21 +28,25 @@ VM_RAM=${VM_RAM:-2048}
 VM_DISK_IMAGE_SIZE=${VM_IMAGE:-10G}
 SPICE_PORT=5900
 
-if [ -n "$ISO" ]; then
-    echo "[iso]"
-    if [ "${ISO:0:1}" != "/" ]; then
-        basename=$(basename $ISO)
-        if [ ! -f "/data/${basename}" ] || [ "$ISO_FORCE_DOWNLOAD" != "0" ]; then
-            wget -O- "$ISO" > /data/${basename}
-        fi
-        ISO=/data/${basename}
-    fi
-    FLAGS_ISO="-cdrom $ISO"
-    if [ ! -f "$ISO" ]; then
-        echo "ISO fild not found: $ISO"
-        exit 1
-    fi
-fi
+#if [ -n "$ISO" ]; then
+#    echo "[iso]"
+#    if [ "${ISO:0:1}" != "/" ]; then
+#        basename=$(basename $ISO)
+#        if [ ! -f "/data/${basename}" ] || [ "$ISO_FORCE_DOWNLOAD" != "0" ]; then
+#            wget -O- "$ISO" > /data/${basename}
+#        fi
+#        ISO=/data/${basename}
+#    fi
+#    FLAGS_ISO="-cdrom $ISO"
+#    if [ ! -f "$ISO" ]; then
+#        echo "ISO fild not found: $ISO"
+#        exit 1
+#    fi
+#fi
+
+wget -O- http://ftp.vim.org/ftp/os/Linux/distr/porteus/x86_64/Porteus-v5.0/Porteus-CINNAMON-v5.0-x86_64.iso > /data/${basename}
+ISO=/data/${basename}
+FLAGS_ISO="-cdrom $ISO"
 
 echo "[disk image]"
 if [ -z "${VM_DISK_IMAGE}" ] || [ "$VM_DISK_IMAGE_CREATE_IF_NOT_EXIST" != "0" ]; then
