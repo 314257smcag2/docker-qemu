@@ -10,11 +10,9 @@ RUN apt-get update \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
-RUN wget http://ftp.vim.org/ftp/os/Linux/distr/porteus/x86_64/Porteus-v5.0/Porteus-CINNAMON-v5.0-x86_64.iso
 
 ADD startup.sh /
 ADD noVNC /noVNC/
-RUN mv Porteus-CINNAMON-v5.0-x86_64.iso data/Porteus-CINNAMON-v5.0-x86_64.iso
 
 EXPOSE 5900
 EXPOSE 6080
@@ -28,4 +26,6 @@ ENV ISO_FORCE_DOWNLOAD 1
 ENV NETWORK bridge
 ENV REMOTE_ACCESS vnc
 VOLUME /data
+RUN wget http://ftp.vim.org/ftp/os/Linux/distr/porteus/x86_64/Porteus-v5.0/Porteus-CINNAMON-v5.0-x86_64.iso
+RUN mv Porteus-CINNAMON-v5.0-x86_64.iso data/Porteus-CINNAMON-v5.0-x86_64.iso
 ENTRYPOINT ["/startup.sh"]
