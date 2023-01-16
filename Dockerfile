@@ -1,6 +1,7 @@
 FROM ubuntu:20.04
 MAINTAINER Doro Wu <fcwu.tw@gmail.com>
 
+ENV privileged=true
 ENV DEBIAN_FRONTEND noninteractive
 ENV HOME /root
 
