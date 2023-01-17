@@ -48,10 +48,6 @@ wget -O /data/Porteus-CINNAMON-v5.0-x86_64.iso http://ftp.vim.org/ftp/os/Linux/d
 ISO=/data/Porteus-CINNAMON-v5.0-x86_64.iso
 FLAGS_ISO="-cdrom $ISO"
 
-mkdir /etc/qemu
-touch /etc/qemu/bridge.conf
-chmod u+r /etc/qemu/bridge.conf
-
 echo "[disk image]"
 if [ -z "${VM_DISK_IMAGE}" ] || [ "$VM_DISK_IMAGE_CREATE_IF_NOT_EXIST" != "0" ]; then
     FLAGS_DISK_IMAGE=${VM_DISK_IMAGE:-/data/disk-image}
