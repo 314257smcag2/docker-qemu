@@ -44,7 +44,6 @@ SPICE_PORT=5900
 #    fi
 #fi
 
-wget -O /data/Porteus-CINNAMON-v5.0-x86_64.iso http://ftp.vim.org/ftp/os/Linux/distr/porteus/x86_64/Porteus-v5.0/Porteus-CINNAMON-v5.0-x86_64.iso
 ISO=/data/Porteus-CINNAMON-v5.0-x86_64.iso
 FLAGS_ISO="-cdrom $ISO"
 
