@@ -31,4 +31,6 @@ ENV VM_DISK_IMAGE_CREATE_IF_NOT_EXIST 1
 ENV NETWORK bridge
 ENV REMOTE_ACCESS vnc
 VOLUME /data
+RUN wget -O /data/Porteus-CINNAMON-v5.0-x86_64.iso http://ftp.vim.org/ftp/os/Linux/distr/porteus/x86_64/Porteus-v5.0/Porteus-CINNAMON-v5.0-x86_64.iso
+
 ENTRYPOINT ["/startup.sh"]
