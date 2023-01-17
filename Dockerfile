@@ -12,6 +12,10 @@ RUN apt-get update \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
 
+RUN mkdir /etc/qemu
+RUN touch /etc/qemu/bridge.conf
+RUN chmod u+r /etc/qemu/bridge.conf
+
 ADD startup.sh /
 ADD noVNC /noVNC/
 
